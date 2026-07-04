@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #6366f1; /* Indigo 500 */
+  --color-primary-hover: #4f46e5; /* Indigo 600 */
+  --color-secondary: #8b5cf6; /* Violet 500 */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-100 font-light antialiased;
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
+    background-image: 
+      radial-gradient(circle at 15% 50%, rgba(99, 102, 241, 0.08), transparent 25%),
+      radial-gradient(circle at 85% 30%, rgba(139, 92, 246, 0.08), transparent 25%);
+    background-attachment: fixed;
+  }
+}
+
+/* Glassmorphic cards - Refined */
+.glass-card {
+  @apply bg-slate-900/60 backdrop-blur-xl border border-slate-700/40 rounded-2xl shadow-xl shadow-black/20;
+}
+
+.glass-card-hover {
+  @apply transition-all duration-300 hover:bg-slate-800/60 hover:border-slate-600/50 hover:shadow-2xl hover:shadow-primary/5 hover:-translate-y-1;
+}
+
+/* Buttons */
+.btn-primary {
+  @apply px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-500 to-violet-600 text-white font-medium 
+  shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 
+  transition-all duration-300 hover:-translate-y-0.5 active:translate-y-0;
+}
+
+.btn-secondary {
+  @apply px-6 py-3 rounded-xl bg-slate-800/50 text-slate-300 font-medium border border-slate-700/50
+  hover:bg-slate-800 hover:text-white hover:border-slate-600
+  transition-all duration-200;
+}
+
+/* Inputs */
+.input-field {
+  @apply w-full bg-slate-900/50 border border-slate-700/50 rounded-xl px-4 py-3 text-slate-200 
+  focus:border-primary focus:ring-1 focus:ring-primary/50 focus:outline-none transition-all placeholder:text-slate-600;
+}
+
+/* Tooltip base */
+[data-tooltip] {
+  @apply border-b border-dashed border-slate-500/50 cursor-help hover:border-primary hover:text-primary transition-colors;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-slate-900;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-700 rounded-full hover:bg-slate-600;
+}
