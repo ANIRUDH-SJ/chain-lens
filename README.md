@@ -1,5 +1,7 @@
 # Chain Lens
 
+**🔗 Live demo — [chain-lens-ten.vercel.app](https://chain-lens-ten.vercel.app)**
+
 A from-scratch **Bitcoin transaction & block analyzer**. It deserializes raw Bitcoin
 transactions (and raw `blk*.dat` block files) with no dependency on a full node or any
 external API, produces a precise, machine-checkable JSON report, and ships a React web
